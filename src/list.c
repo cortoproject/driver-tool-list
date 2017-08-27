@@ -66,7 +66,7 @@ int cortomain(int argc, char *argv[]) {
     } else {
         corto_iter it;
         corto_int32 count = 0, globalCount = 0;
-        if (corto_select("//").type("/corto/core/package").iter(&it)) {
+        if (corto_select("//").type("/corto/vstore/package").iter(&it)) {
             goto error;
         }
         while (corto_iter_hasNext(&it)) {
