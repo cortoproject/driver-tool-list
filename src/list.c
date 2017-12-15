@@ -29,7 +29,7 @@ int cortomain(int argc, char *argv[]) {
 
     corto_iter it;
     corto_int32 count = 0;
-    if (corto_select("//").type("/corto/vstore/package").iter(&it)) {
+    if (corto_select("//").type("package").iter(&it)) {
         goto error;
     }
     while (corto_iter_hasNext(&it)) {
@@ -40,11 +40,11 @@ int cortomain(int argc, char *argv[]) {
         if ((lib = corto_locate(id, NULL, CORTO_LOCATION_LIB))) {
             corto_log("#[bold]%s #[grey]=>#[normal] #[grey]%s\n",
                 id, lib);
+                corto_dealloc(lib);
         } else {
-            corto_raise(); /* Raise exception if it was thrown */
+            corto_log("#[bold]%s\n", id);
         }
         count ++;
-        corto_dealloc(lib);
     }
 
     corto_log("\n#[white]Total: %d packages\n",
