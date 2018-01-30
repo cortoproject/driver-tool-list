@@ -35,12 +35,11 @@ int cortomain(int argc, char *argv[]) {
     while (corto_iter_hasNext(&it)) {
         corto_result *r = corto_iter_next(&it);
         corto_id id;
-        char *lib;
+        const char *lib;
         sprintf(id, "%s/%s", r->parent, r->id);
-        if ((lib = corto_locate(id, NULL, CORTO_LOCATION_LIB))) {
+        if ((lib = corto_locate(id, NULL, CORTO_LOCATE_LIB))) {
             corto_log("#[bold]%s #[grey]=>#[normal] #[grey]%s\n",
                 id, lib);
-                corto_dealloc(lib);
         } else {
             corto_log("#[bold]%s\n", id);
         }
