@@ -33,7 +33,7 @@ int cortomain(int argc, char *argv[]) {
         goto error;
     }
     while (corto_iter_hasNext(&it)) {
-        corto_result *r = corto_iter_next(&it);
+        corto_record *r = corto_iter_next(&it);
         corto_id id;
         const char *lib;
         sprintf(id, "%s/%s", r->parent, r->id);
