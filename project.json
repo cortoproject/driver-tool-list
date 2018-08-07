@@ -1,10 +1,10 @@
 {
-    "id": "driver/tool/list",
+    "id": "driver.tool.list",
     "type": "package",
     "value": {
         "author": "Sander Mertens",
         "description": "List command for corto tool",
         "managed": false,
-        "use": ["corto", "corto/argparse"]
+        "use": ["corto", "corto.util.argparse"]
     }
 }

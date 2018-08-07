@@ -20,7 +20,7 @@
  */
 
 #include <corto/corto.h>
-#include <corto/argparse/argparse.h>
+#include <corto/util/argparse/argparse.h>
 #include <driver/tool/list/list.h>
 
 int cortomain(int argc, char *argv[]) {
